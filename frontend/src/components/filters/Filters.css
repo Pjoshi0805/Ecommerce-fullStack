@@ -1,0 +1,39 @@
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  flex-wrap: wrap;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.filter-group select {
+  height: 34px;
+  padding: 0 0.65rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #111;
+  background: #fafafa;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  border-color: #888;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .filter-group {
+    padding: 0.75rem 1rem;
+  }
+}

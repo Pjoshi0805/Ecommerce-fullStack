@@ -1,0 +1,14 @@
+.wishlist-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+}
+
+@media (max-width: 600px) {
+  .wishlist-page {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+}
