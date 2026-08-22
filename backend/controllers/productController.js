@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 import Product from "../models/Product.js"
+import { AppError } from "../utils/AppError.js"
 
 export async function getProducts(req, res) {
     const products = await Product.find()
@@ -108,4 +109,43 @@ export async function deleteProduct(req, res) {
     }
 
     return res.status(200).json(deletedProduct)
+}
+
+export async function updateStock(req, res, next) {
+    const { id } = req.params
+    const { quantity } = req.body
+    if (!quantity || typeof quantity !== 'number' || quantity <= 0) {
+        return next(new AppError('Invalid stock quantity', 400))
+    }
+
+    const product = await Product.findById(id)
+
+    if (!product) {
+        return next(new AppError('Product not found', 404))
+    }
+    const userId = req.user.id
+    const validation = product.seller.equals(userId)
+
+    if (!validation && req.user.role !== 'admin') {
+        return next(new AppError('You are not allowed to perform this action', 403))
+    }
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+        id,
+        {
+            $inc: {
+                stock: quantity
+            }
+        },
+        {
+            new: true
+        }
+    )
+
+    if (!updatedProduct) {
+        return next(new AppError('Something went wrong', 500))
+    }
+
+    return res.status(200).json(updatedProduct)
+
 }

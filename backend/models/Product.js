@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
         min: 0
     },
     seller: {
-        type: mongoose.Schema.types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     }

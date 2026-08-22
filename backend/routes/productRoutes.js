@@ -1,5 +1,5 @@
 import express from 'express'
-import { getProducts, getProductById, createProduct, updateProduct, deleteProduct } from '../controllers/productController.js'
+import { getProducts, getProductById, createProduct, updateProduct, deleteProduct, updateStock } from '../controllers/productController.js'
 import { authMiddleware } from '../middleware/authMiddleware.js'
 import { authorize } from '../middleware/roleMiddleware.js'
 
@@ -15,4 +15,5 @@ router.patch('/:id', authMiddleware, authorize('admin', 'retailer'), updateProdu
 
 router.delete('/:id', authMiddleware, authorize('admin', 'retailer'), deleteProduct)
 
+router.patch('/:id/stock', authMiddleware, updateStock)
 export default router
