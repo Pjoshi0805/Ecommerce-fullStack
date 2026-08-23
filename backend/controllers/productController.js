@@ -29,7 +29,7 @@ export async function getProductById(req, res) {
 
 export async function createProduct(req, res) {
     try {
-        const { title, price, stock } = req.body
+        const { title, price, stock  ,category , image} = req.body
 
         const { id } = req.user
 
@@ -38,6 +38,8 @@ export async function createProduct(req, res) {
             title,
             price,
             stock,
+            category,
+            image,
             seller: id
         })
 

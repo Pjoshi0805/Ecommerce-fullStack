@@ -1,12 +1,10 @@
 import { useNavigate, useParams , useOutletContext } from "react-router-dom"
-import { CartContext } from "../../context/CartContext"
 import './ProductDetails.css'
 import useCart from "../../hooks/useCart"
 function ProductDetails() {
     const { id } = useParams()
-    const productId = Number(id)
     const {products,loading,error} = useOutletContext()
-    const selectedProduct = products.find((product) => product.id === productId)
+    const selectedProduct = products.find((product) => product.id === id)
     const { addToCart } = useCart()
     const navigate = useNavigate()
     if (!selectedProduct) {

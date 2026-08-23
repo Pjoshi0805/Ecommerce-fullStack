@@ -5,6 +5,7 @@ import productRouter from './routes/productRoutes.js'
 import userRouter from './routes/userRoutes.js'
 import { errorMiddleware } from './middleware/errorMiddleware.js'
 import orderRouter from './routes/orderRoutes.js'
+import cors from 'cors'
 const app = express()
 
 
@@ -14,7 +15,7 @@ app.use((req, res, next) => {
     next()
 })
 
-
+app.use(cors())
 app.use(express.json())
 
 app.use('/products', productRouter)

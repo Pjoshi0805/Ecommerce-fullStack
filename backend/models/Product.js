@@ -19,7 +19,17 @@ const productSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    category: {
+        type: String,
+        enum: ['electronics', 'shoes', 'clothes', 'books', 'sports'],
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
     }
+
 })
 
 const Product = mongoose.model('Product', productSchema)
