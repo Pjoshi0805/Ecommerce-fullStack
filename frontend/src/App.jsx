@@ -9,6 +9,7 @@ import NotFound from "./components/notFound/NotFound";
 import Home from "./components/home/Home";
 import { useState } from "react";
 import Wishlist from "./components/wishlist/Wishlist";
+import Login from "./components/login/Login";
 function App() {
   return (
       <Routes>
@@ -28,6 +29,11 @@ function App() {
             element={<Cart />}
           />
 
+          <Route
+            path='login'
+            element={<Login/>}
+          />
+          
           <Route
             path="products/:id"
             element={<ProductDetails />}

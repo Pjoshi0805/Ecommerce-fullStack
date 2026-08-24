@@ -22,7 +22,6 @@ function Header2({ storeName, searchTerm, setSearchTerm }) {
                 value={searchTerm}
                 onChange={(e) => {
                     setSearchTerm(e.target.value)
-                    console.log(searchTerm)
                 }}
             />
             <Link
