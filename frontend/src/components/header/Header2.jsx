@@ -2,10 +2,11 @@ import "./Header2.css";
 
 import useCart from "../../hooks/useCart";
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 function Header2({ storeName, searchTerm, setSearchTerm }) {
     const { cartItems } = useCart()
-
+    const {user,logout} = useAuth()
     const navigate = useNavigate()
     const totalItems = cartItems.reduce((total, cartItem) => {
         return total + cartItem.quantity;
@@ -24,6 +25,7 @@ function Header2({ storeName, searchTerm, setSearchTerm }) {
                     setSearchTerm(e.target.value)
                 }}
             />
+           {user && <button onClick={()=>{logout()}}>Logout</button>}
             <Link
                 className="cart-btn"
                 to="/cart"

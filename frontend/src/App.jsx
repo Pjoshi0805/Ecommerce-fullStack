@@ -10,6 +10,8 @@ import Home from "./components/home/Home";
 import { useState } from "react";
 import Wishlist from "./components/wishlist/Wishlist";
 import Login from "./components/login/Login";
+import { ProtectedRoute } from "./routes/ProtectedRoutes";
+import Register from "./components/register/Register";
 function App() {
   return (
       <Routes>
@@ -18,7 +20,7 @@ function App() {
             index
             element={<Home/>}
           />
-
+          <Route element={<ProtectedRoute />}>
           <Route 
           path="wishlist"
           element={<Wishlist />}
@@ -28,12 +30,16 @@ function App() {
             path="cart"
             element={<Cart />}
           />
-
+        </Route>
           <Route
             path='login'
             element={<Login/>}
           />
-          
+          <Route
+          path="register"
+          element={<Register/>}
+          />
+
           <Route
             path="products/:id"
             element={<ProductDetails />}

@@ -17,6 +17,27 @@ export async function loginUser(email,password){
     return response.json()
 }
 
+export async function registerUser(name,email,password){
+    const response = await fetch('http://localhost:3001/users',{
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            name,
+            email,
+            password
+        })
+    })
+
+    if(!response.ok){
+        throw new Error('Failed to create account')
+    }
+
+    return response.json()
+
+}
+
 export async function getCurrentUser(token){
     const response = await fetch('http://localhost:3001/users/me',{
         method : 'GET',

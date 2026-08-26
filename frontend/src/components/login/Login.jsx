@@ -2,17 +2,22 @@ import { useState } from "react"
 import useAuth from "../../hooks/useAuth"
 
 import './Login.css'
+import { useNavigate } from "react-router-dom"
 function Login(){
     const[email,setEmail] = useState('')
     const[password,setPassword] = useState('')
+    const [error, setError] = useState(null)
     const {login} = useAuth()
+    const navigate = useNavigate()
     return(
         <form onSubmit={async (e)=>{
             e.preventDefault()
             try{
+                setError(null)
                 await login(email,password)
+                navigate('/')
             }catch(error){
-                console.log(error.message)
+                setError(error.message)
             }
         }}>
             <label>Email</label>
@@ -34,6 +39,8 @@ function Login(){
                 setPassword(e.target.value)
             }}
             />
+
+            {error && <p>{error}</p>}
 
             <button type="submit">Login</button>
         </form>
