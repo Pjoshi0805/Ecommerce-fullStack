@@ -12,46 +12,51 @@ import Wishlist from "./components/wishlist/Wishlist";
 import Login from "./components/login/Login";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import Register from "./components/register/Register";
+import Checkout from "./components/checkout/Checkout";
 function App() {
   return (
-      <Routes>
-        <Route element={<Layout/>}>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route
+          index
+          element={<Home />}
+        />
+        <Route element={<ProtectedRoute />}>
           <Route
-            index
-            element={<Home/>}
-          />
-          <Route element={<ProtectedRoute />}>
-          <Route 
-          path="wishlist"
-          element={<Wishlist />}
+            path="wishlist"
+            element={<Wishlist />}
           />
 
           <Route
             path="cart"
             element={<Cart />}
           />
-        </Route>
           <Route
-            path='login'
-            element={<Login/>}
+            path="checkout"
+            element={<Checkout />}
           />
-          <Route
+        </Route>
+        <Route
+          path='login'
+          element={<Login />}
+        />
+        <Route
           path="register"
-          element={<Register/>}
-          />
+          element={<Register />}
+        />
 
-          <Route
-            path="products/:id"
-            element={<ProductDetails />}
-          />
+        <Route
+          path="products/:id"
+          element={<ProductDetails />}
+        />
 
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
 
-        </Route>
-      </Routes>
+      </Route>
+    </Routes>
   );
 }
 export default App;

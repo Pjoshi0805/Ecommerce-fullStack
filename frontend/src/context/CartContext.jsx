@@ -56,19 +56,26 @@ export function CartProvider({children}){
     })
   },[])
   
+  const clearCart = useCallback(()=>{
+    dispatch({
+        type : 'CLEAR_CART'
+    })
+  },[])
 
   const contextValue = useMemo(() => ({
     cartItems,
     addToCart,
     increaseQuantity,
     decreaseQuantity,
-    removeFromCart
+    removeFromCart,
+    clearCart
 }), [
     cartItems,
     addToCart,
     increaseQuantity,
     decreaseQuantity,
-    removeFromCart
+    removeFromCart,
+    clearCart
 ]);
   return (
      <CartContext.Provider value={contextValue}>

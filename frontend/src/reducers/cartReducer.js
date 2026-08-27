@@ -69,6 +69,9 @@ function cartReducer(state, action) {
         });
     }
 
+    if(action.type === 'CLEAR_CART'){
+        return []
+    }
     return state
 }
 export {initialState}

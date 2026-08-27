@@ -56,7 +56,11 @@ function Cart() {
                     <h3>
                         Total: ₹{totalPrice.toLocaleString()}
                     </h3>
-                    <button>
+                    <button 
+                    onClick={()=>{
+                        navigate('/checkout')
+                    }}
+                    >
                         Checkout
                     </button>
                 </div>
