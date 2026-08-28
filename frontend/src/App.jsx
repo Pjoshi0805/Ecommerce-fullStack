@@ -15,6 +15,10 @@ import Register from "./components/register/Register";
 import Checkout from "./components/checkout/Checkout";
 import Order from "./components/order/Order";
 import OrderDetails from "./components/orderDetails/OrderDetails";
+import AdminRoute from "./routes/AdminRoute";
+import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
+import AdminProducts from "./components/admin/products/AdminProducts";
+
 function App() {
   return (
     <Routes>
@@ -37,15 +41,25 @@ function App() {
             path="checkout"
             element={<Checkout />}
           />
-          <Route 
-          path="orders"
-          element={<Order/>}
+          <Route
+            path="orders"
+            element={<Order />}
           />
 
-        <Route 
-        path='orders/:id'
-        element={<OrderDetails/>}
-        />
+          <Route
+            path='orders/:id'
+            element={<OrderDetails />}
+          />
+          <Route element={<AdminRoute />}>
+            <Route
+              path="admin"
+              element={<AdminDashboard />}
+            />
+            <Route
+              path="admin/products"
+              element={<AdminProducts />}
+            />
+          </Route>
 
         </Route>
         <Route

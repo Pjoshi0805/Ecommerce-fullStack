@@ -1,0 +1,88 @@
+/* AdminProducts.css */
+
+.admin-products {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.admin-products h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.admin-products table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-products thead {
+  background: #f7f8fa;
+}
+
+.admin-products th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.admin-products td {
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.admin-products tbody tr:hover {
+  background: #fafbfc;
+}
+
+.admin-products tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action buttons */
+.admin-products td button {
+  padding: 0.4rem 0.9rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.admin-products td button:first-of-type {
+  background: #e8f0fe;
+  color: #1a56db;
+}
+
+.admin-products td button:first-of-type:hover {
+  background: #d5e4fd;
+}
+
+.admin-products td button:last-of-type {
+  background: #fdeaea;
+  color: #d92d20;
+}
+
+.admin-products td button:last-of-type:hover {
+  background: #fad4d4;
+}
+
+.admin-products td button:active {
+  transform: scale(0.96);
+}
