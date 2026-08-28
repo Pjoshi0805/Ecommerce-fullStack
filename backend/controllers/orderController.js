@@ -107,11 +107,12 @@ export async function getOrders(req, res, next) {
 export async function getOrderById(req, res, next) {
     const { id } = req.params
     const customer = req.user.id
-
+    
     const order = await Order.findOne({
         _id: id,
         customer: customer
     })
+
     if (!order) {
         return next(new AppError('Order Not Found', 404))
     }

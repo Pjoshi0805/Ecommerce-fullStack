@@ -21,10 +21,23 @@ export async function getOrders(token){
         method : 'GET',
         headers : {
             'Authorization' : `Bearer ${token}`
-        },
+        }
     })
     if(!response.ok){
         throw new Error ('Failed to find order')
     }
     return response.json()
+}
+
+export async function getOrderById(id,token){
+     const response = await fetch(`http://localhost:3001/orders/${id}`,{
+        method : 'GET',
+        headers : {
+            'Authorization' : `Bearer ${token}`
+        }
+     })
+     if(!response.ok){
+        throw new Error ('Failed to find order')
+     }
+     return response.json()
 }

@@ -13,6 +13,8 @@ import Login from "./components/login/Login";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import Register from "./components/register/Register";
 import Checkout from "./components/checkout/Checkout";
+import Order from "./components/order/Order";
+import OrderDetails from "./components/orderDetails/OrderDetails";
 function App() {
   return (
     <Routes>
@@ -35,6 +37,16 @@ function App() {
             path="checkout"
             element={<Checkout />}
           />
+          <Route 
+          path="orders"
+          element={<Order/>}
+          />
+
+        <Route 
+        path='orders/:id'
+        element={<OrderDetails/>}
+        />
+
         </Route>
         <Route
           path='login'
