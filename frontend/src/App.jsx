@@ -20,6 +20,7 @@ import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminProducts from "./components/admin/products/AdminProducts";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import AdminEditProduct from "./components/admin/products/AdminEditProduct";
+import AdminOrders from "./components/admin/order/AdminOrders";
 
 function App() {
   return (
@@ -68,6 +69,10 @@ function App() {
             <Route
               path="admin/products/:id/edit"
               element={<AdminEditProduct />}
+            />
+            <Route
+              path="admin/orders"
+              element={<AdminOrders />}
             />
           </Route>
 

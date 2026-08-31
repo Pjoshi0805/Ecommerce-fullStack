@@ -41,3 +41,21 @@ export async function getOrderById(id,token){
      }
      return response.json()
 }
+export async function updateOrderStatus(id, status, token) {
+    const response = await fetch(`http://localhost:3001/orders/${id}/status`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            status
+        })
+    })
+
+    if (!response.ok) {
+        throw new Error('Failed to update order status')
+    }
+
+    return response.json()
+}
