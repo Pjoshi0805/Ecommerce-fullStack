@@ -21,6 +21,7 @@ import AdminProducts from "./components/admin/products/AdminProducts";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import AdminEditProduct from "./components/admin/products/AdminEditProduct";
 import AdminOrders from "./components/admin/order/AdminOrders";
+import AdminOrderDetails from "./components/admin/order/AdminOrderDetails";
 
 function App() {
   return (
@@ -73,6 +74,10 @@ function App() {
             <Route
               path="admin/orders"
               element={<AdminOrders />}
+            />
+            <Route
+              path="admin/orders/:id"
+              element={<AdminOrderDetails />}
             />
           </Route>
 

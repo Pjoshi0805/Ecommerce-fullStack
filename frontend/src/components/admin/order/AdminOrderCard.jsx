@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { updateOrderStatus } from "../../../api/orderApi"
 import useAuth from "../../../hooks/useAuth"
 
@@ -49,6 +50,9 @@ function AdminOrderCard({ order, onUpdate }) {
                 ) : (
                     <span>No actions</span>
                 )}
+                <Link to={`/admin/orders/${order._id}`}>
+                    View Details
+                </Link>
             </td>
         </tr>
     )
