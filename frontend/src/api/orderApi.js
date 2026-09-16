@@ -59,3 +59,20 @@ export async function updateOrderStatus(id, status, token) {
 
     return response.json()
 }
+
+export async function getAllOrders(token) {
+    const response = await fetch(
+        'http://localhost:3001/orders/admin/orders',
+        {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+    )
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch admin orders')
+    }
+
+    return response.json()
+}

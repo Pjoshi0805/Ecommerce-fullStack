@@ -28,6 +28,8 @@ function AdminOrderCard({ order, onUpdate }) {
     return (
         <tr>
             <td>{order._id}</td>
+            <td>{order.customer?.name}</td>
+            <td>{order.customer?.email}</td>
             <td>{order.status}</td>
             <td>₹{order.totalAmount}</td>
             <td>

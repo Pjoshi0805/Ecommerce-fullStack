@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getProducts } from "../../../api/productApi"
 import { getOrders } from "../../../api/orderApi"
 import useAuth from "../../../hooks/useAuth"
-
+import './AdminDashboard.css'
 function AdminDashboard() {
     const { token } = useAuth()
 

@@ -141,3 +141,15 @@ export async function updateOrderStatus(req, res, next) {
 
     return res.status(200).json(order)
 }
+
+export async function getAllOrders(req, res, next) {
+    try {
+        const orders = await Order.find()
+    .populate('customer', 'name email')
+
+        return res.status(200).json(orders)
+
+    } catch (error) {
+        return next(new AppError(error.message))
+    }
+}

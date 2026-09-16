@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import useAuth from "../../../hooks/useAuth"
-import { getOrders } from "../../../api/orderApi"
+import { getAllOrders } from "../../../api/orderApi"
 import AdminOrderCard from "./AdminOrderCard"
 
 function AdminOrders() {
@@ -14,7 +14,7 @@ function AdminOrders() {
             setLoading(true)
 
             try {
-                const data = await getOrders(token)
+                const data = await getAllOrders(token)
                 setOrders(data)
             } catch (error) {
                 setError(error.message)
@@ -29,14 +29,14 @@ function AdminOrders() {
     }, [token])
 
     function handleOrderUpdated(id, newStatus) {
-    setOrders(currentOrders =>
-        currentOrders.map(order =>
-            order._id === id
-                ? { ...order, status: newStatus }
-                : order
+        setOrders(currentOrders =>
+            currentOrders.map(order =>
+                order._id === id
+                    ? { ...order, status: newStatus }
+                    : order
+            )
         )
-    )
-}
+    }
 
     if (loading) {
         return <div>Loading...</div>
@@ -50,29 +50,31 @@ function AdminOrders() {
         return <div>No orders yet...</div>
     }
 
-    return(
+    return (
         <div className="admin-orders">
-    <h2>Manage Orders</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Status</th>
-                <th>Total Amount</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {orders.map((order) => (
-                <AdminOrderCard
-                    key={order._id}
-                    order={order}
-                    onUpdate={handleOrderUpdated}
-                />
-            ))}
-        </tbody>
-    </table>
-</div>
+            <h2>Manage Orders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Total Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders.map((order) => (
+                        <AdminOrderCard
+                            key={order._id}
+                            order={order}
+                            onUpdate={handleOrderUpdated}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     )
 
 }
