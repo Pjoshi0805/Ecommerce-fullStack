@@ -6,6 +6,7 @@ import userRouter from './routes/userRoutes.js'
 import { errorMiddleware } from './middleware/errorMiddleware.js'
 import orderRouter from './routes/orderRoutes.js'
 import cors from 'cors'
+import categoryRouter from './routes/categoryRoutes.js'
 const app = express()
 
 
@@ -21,6 +22,7 @@ app.use(express.json())
 app.use('/products', productRouter)
 app.use('/users', userRouter)
 app.use('/orders', orderRouter)
+app.use('/categories',categoryRouter)
 app.use(errorMiddleware)
 async function startServer() {
     await connectDb()
