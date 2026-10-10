@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import Category from "../models/category.js";
-import AppError from '../utils/AppError.js'
+import { AppError } from '../utils/AppError.js'
 export async function getCategories(req, res, next) {
     try {
         const categories = await Category.find()

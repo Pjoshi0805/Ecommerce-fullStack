@@ -54,8 +54,11 @@ function AdminLayout() {
                             🏷️ Categories
                         </NavLink>
 
-                        <NavLink to="/admin/inventory">
-                            📋 Inventory
+                        <NavLink
+                            to="/admin/inventory"
+                            className={({ isActive }) => isActive ? "active" : ""}
+                        >
+                            Inventory
                         </NavLink>
                     </div>
 
