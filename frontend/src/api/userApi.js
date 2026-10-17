@@ -52,3 +52,23 @@ export async function getCurrentUser(token){
 
     return response.json()
 }
+
+
+
+export async function getAllUsers(token) {
+    const response = await fetch('http://localhost:3001/users/admin/users', {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    const data = await response.json()
+
+    if (!response.ok) {
+        console.error("Get users failed:", response.status, data)
+        throw new Error(data.message || data.error || `Request failed: ${response.status}`)
+    }
+
+    return data
+}

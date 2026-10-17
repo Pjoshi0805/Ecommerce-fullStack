@@ -24,7 +24,9 @@ import AdminOrders from "./components/admin/order/AdminOrders";
 import AdminOrderDetails from "./components/admin/order/AdminOrderDetails";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminCategories from "./components/admin/categories/AdminCategories";
-import AdminInventory from "./components/admin/inventory/AdminInventory"
+import AdminInventory from "./components/admin/inventory/AdminInventory";
+import AdminUsers from "./components/admin/users/AdminUsers"
+import AdminAnalytics from "./components/admin/analytics/AdminAnalytics"
 function App() {
   return (
     <Routes>
@@ -66,6 +68,8 @@ function App() {
               <Route path="admin/orders/:id" element={<AdminOrderDetails />} />
               <Route path="admin/categories" element={<AdminCategories />} />
               <Route path="admin/inventory" element={<AdminInventory />} />
+              <Route path="admin/users" element={<AdminUsers />} />
+              <Route path="admin/analytics" element={<AdminAnalytics />} />
             </Route>
           </Route>
 

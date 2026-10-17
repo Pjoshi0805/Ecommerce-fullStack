@@ -55,3 +55,12 @@ export async function getCurrentUser(req, res) {
     return res.status(200).json(user)
 
 }
+
+
+export async function getAllUsers(req, res) {
+    const users = await User.find()
+        .select('-password')
+        .sort({ createdAt: -1 });
+
+    return res.status(200).json(users);
+}
