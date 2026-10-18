@@ -1,0 +1,115 @@
+.admin-settings {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.admin-settings h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.settings-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.settings-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.settings-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-section form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.settings-section label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.settings-section input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.settings-section input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.settings-section input[readonly] {
+  color: #9ca3af;
+  cursor: default;
+  background: #f3f4f6;
+}
+
+.settings-section button[type="submit"] {
+  align-self: flex-start;
+  padding: 0.65rem 1.5rem;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+.settings-section button[type="submit"]:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.4);
+}
+
+.settings-section button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settings-section p[role="alert"] {
+  padding: 0.6rem 0.85rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.settings-section p[role="status"] {
+  padding: 0.6rem 0.85rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin: 0;
+}

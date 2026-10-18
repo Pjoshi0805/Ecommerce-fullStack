@@ -1,0 +1,130 @@
+.admin-users {
+  padding: 0;
+}
+
+.admin-users .admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-users .admin-page-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.admin-users .admin-page-header p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.admin-users p[role="alert"] {
+  padding: 0.6rem 0.85rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.admin-users p[role="status"] {
+  padding: 0.6rem 0.85rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.admin-users input[type="search"] {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.admin-users input[type="search"]:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.admin-users table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-users thead {
+  background: #f9fafb;
+}
+
+.admin-users th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-users td {
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-users tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-users tbody tr:hover {
+  background: #f9fafb;
+}
+
+.admin-users td button {
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: none;
+}
+
+/* Deactivate = red-ish; Activate = green-ish */
+.admin-users td button:not(:disabled) {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.admin-users td button:not(:disabled):hover {
+  background: #e0e7ff;
+}
+
+.admin-users td button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

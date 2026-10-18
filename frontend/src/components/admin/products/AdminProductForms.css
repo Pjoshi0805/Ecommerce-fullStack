@@ -1,0 +1,80 @@
+.admin-edit-product-form,
+.create-product-form {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+}
+
+.admin-edit-product-form h2,
+.create-product-form h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.admin-edit-product-form label,
+.create-product-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+
+.admin-edit-product-form label:first-of-type,
+.create-product-form label:first-of-type {
+  margin-top: 0;
+}
+
+.admin-edit-product-form input,
+.admin-edit-product-form select,
+.create-product-form input,
+.create-product-form select {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  appearance: auto;
+}
+
+.admin-edit-product-form input:focus,
+.admin-edit-product-form select:focus,
+.create-product-form input:focus,
+.create-product-form select:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.admin-edit-product-form button[type="submit"],
+.create-product-form button[type="submit"] {
+  margin-top: 1.75rem;
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.admin-edit-product-form button[type="submit"]:hover,
+.create-product-form button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4);
+}

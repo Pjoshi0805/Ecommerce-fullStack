@@ -1,3 +1,4 @@
+import "./OrderCard.css";
 import { Link } from "react-router-dom"
 
 function OrderCard({ order }) {

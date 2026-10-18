@@ -1,3 +1,4 @@
+import "./Checkout.css";
 import useCart from "../../hooks/useCart";
 import useAuth from "../../hooks/useAuth";
 import { createOrder } from "../../api/orderApi";

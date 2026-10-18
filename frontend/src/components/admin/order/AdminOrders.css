@@ -1,0 +1,91 @@
+.admin-orders {
+  padding: 0;
+}
+
+.admin-orders h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.admin-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-orders thead {
+  background: #f9fafb;
+}
+
+.admin-orders th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-orders td {
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.admin-orders tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-orders tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Status badge */
+.admin-orders td select {
+  padding: 0.35rem 0.65rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #374151;
+  background: #f9fafb;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.admin-orders td select:focus {
+  border-color: #6366f1;
+}
+
+.admin-orders td a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.admin-orders td a:hover {
+  background: #e0e7ff;
+}
+
+.admin-orders td span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-right: 0.5rem;
+}

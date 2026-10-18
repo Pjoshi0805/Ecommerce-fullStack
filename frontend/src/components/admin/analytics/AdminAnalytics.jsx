@@ -1,3 +1,4 @@
+import "./AdminAnalytics.css";
 import { useEffect, useState } from "react"
 import { getAdminAnalytics } from "../../../api/analyticsApi"
 import useAuth from "../../../hooks/useAuth"

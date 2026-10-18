@@ -1,3 +1,4 @@
+import "./AdminOrderDetails.css";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getOrderById } from "../../../api/orderApi"

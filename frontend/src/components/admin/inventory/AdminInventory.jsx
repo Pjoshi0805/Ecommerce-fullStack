@@ -1,3 +1,4 @@
+import "./AdminInventory.css";
 import { useEffect, useState } from "react"
 import useAuth from "../../../hooks/useAuth"
 import { getProducts, updateProduct } from "../../../api/productApi"

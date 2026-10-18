@@ -1,0 +1,168 @@
+.admin-categories {
+  padding: 0;
+}
+
+.admin-categories h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-page-header h2 {
+  margin: 0;
+}
+
+.admin-page-header button,
+.admin-categories > form button[type="submit"] {
+  padding: 0.55rem 1.25rem;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+.admin-page-header button:hover,
+.admin-categories > form button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.4);
+}
+
+/* Inline form */
+.admin-categories form {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.admin-categories form h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.admin-categories form input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.admin-categories form input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.admin-categories form button[type="button"] {
+  padding: 0.55rem 1.25rem;
+  background: transparent;
+  color: #6b7280;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-categories form button[type="button"]:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Table */
+.admin-categories table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.admin-categories thead {
+  background: #f9fafb;
+}
+
+.admin-categories th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-categories td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-categories tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-categories tbody tr:hover {
+  background: #f9fafb;
+}
+
+.admin-categories td button {
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 0.4rem;
+  transition: background 0.15s ease;
+}
+
+.admin-categories td button:first-of-type {
+  background: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+.admin-categories td button:first-of-type:hover {
+  background: #e0e7ff;
+}
+
+.admin-categories td button:last-of-type {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.admin-categories td button:last-of-type:hover {
+  background: #fee2e2;
+}

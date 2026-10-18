@@ -1,3 +1,4 @@
+import "./AdminOrders.css";
 import { useEffect, useState } from "react"
 import useAuth from "../../../hooks/useAuth"
 import { getAllOrders } from "../../../api/orderApi"

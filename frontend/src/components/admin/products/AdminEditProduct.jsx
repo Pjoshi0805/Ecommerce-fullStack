@@ -1,3 +1,4 @@
+import "./AdminProductForms.css";
 import { useEffect, useState } from "react"
 import { getProductById, updateProduct } from "../../../api/productApi"
 import { useNavigate, useParams } from "react-router-dom"

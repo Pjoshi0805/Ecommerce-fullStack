@@ -1,0 +1,88 @@
+.admin-inventory {
+  padding: 0;
+}
+
+.admin-inventory h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.admin-inventory table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-inventory thead {
+  background: #f9fafb;
+}
+
+.admin-inventory th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-inventory td {
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-inventory tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-inventory tbody tr:hover {
+  background: #f9fafb;
+}
+
+.admin-inventory td input[type="number"] {
+  width: 80px;
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  outline: none;
+  background: #f9fafb;
+  transition: border-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.admin-inventory td input[type="number"]:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.admin-inventory td button {
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.admin-inventory td button:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.admin-inventory td button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

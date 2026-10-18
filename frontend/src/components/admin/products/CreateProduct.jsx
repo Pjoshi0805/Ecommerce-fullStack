@@ -1,3 +1,4 @@
+import "./AdminProductForms.css";
 import { useState } from "react"
 import { createProduct } from "../../../api/productApi"
 import useAuth from "../../../hooks/useAuth"

@@ -1,3 +1,4 @@
+import "./Register.css";
 import { useState } from "react"
 import { registerUser } from "../../api/userApi"
 import { useNavigate } from "react-router-dom"

@@ -1,3 +1,4 @@
+import "./CartItem.css";
 import useCart from "../../hooks/useCart";
 
 function CartItem({cartItem}){

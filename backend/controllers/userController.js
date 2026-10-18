@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
+import mongoose from "mongoose"
 export async function createUser(req, res) {
     const { name, email, password } = req.body
     const hashedPassword = await bcrypt.hash(password, 10)
@@ -26,6 +27,12 @@ export async function loginUser(req, res) {
     if (!user) {
         return res.status(401).json({ error: 'Invalid credentials' })
     }
+
+    if (user && user.isActive === false) {
+    return res.status(403).json({
+        error: "Your account has been deactivated. Please contact the administrator."
+    })
+}
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password)
 
@@ -136,4 +143,43 @@ export async function changePassword(req, res) {
     return res.status(200).json({
         message: "Password updated successfully"
     })
+}
+
+
+export async function updateUserStatus(req, res) {
+    const { id } = req.params
+    const { isActive } = req.body
+
+    if (!mongoose.isValidObjectId(id)) {
+        return res.status(400).json({
+            error: "Invalid user ID"
+        })
+    }
+
+    if (typeof isActive !== "boolean") {
+        return res.status(400).json({
+            error: "isActive must be true or false"
+        })
+    }
+
+    // Prevent an admin from deactivating their own account.
+    if (id === req.user.id) {
+        return res.status(400).json({
+            error: "You cannot deactivate your own account"
+        })
+    }
+
+    const user = await User.findByIdAndUpdate(
+        id,
+        { isActive },
+        { new: true, runValidators: true }
+    ).select("-password")
+
+    if (!user) {
+        return res.status(404).json({
+            error: "User not found"
+        })
+    }
+
+    return res.status(200).json(user)
 }

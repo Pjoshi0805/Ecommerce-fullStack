@@ -1,3 +1,4 @@
+import "./AdminSettings.css";
 
 import { useEffect, useState } from "react"
 import useAuth from "../../../hooks/useAuth"

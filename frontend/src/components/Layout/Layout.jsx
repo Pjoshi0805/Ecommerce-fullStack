@@ -1,3 +1,4 @@
+import "./Layout.css";
 import Header2 from "../Header/Header2";
 import Footer from "../Footer/Footer";
 import Filters from "../filters/Filters";

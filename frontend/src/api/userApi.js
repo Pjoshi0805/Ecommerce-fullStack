@@ -115,3 +115,27 @@ export async function changePassword(currentPassword, newPassword, token) {
 
     return data
 }
+
+
+
+export async function updateUserStatus(userId, isActive, token) {
+    const response = await fetch(
+        `http://localhost:3001/users/admin/users/${userId}/status`,
+        {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({ isActive })
+        }
+    )
+
+    const data = await response.json()
+
+    if (!response.ok) {
+        throw new Error(data.error || "Failed to update user status")
+    }
+
+    return data
+}

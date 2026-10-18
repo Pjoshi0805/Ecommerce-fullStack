@@ -1,3 +1,4 @@
+import "./Home.css";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
 import ProductGrid from "../ProductGrid/ProductGrid";
