@@ -5,7 +5,9 @@ import {
     createUser,
     loginUser,
     getCurrentUser,
-    getAllUsers
+    getAllUsers,
+    updateCurrentUser,
+    changePassword
 } from "../controllers/userController.js"
 
 import { authMiddleware } from "../middleware/authMiddleware.js"
@@ -18,6 +20,8 @@ router.post('/', createUser)
 router.post('/login', loginUser)
 
 router.get('/me', authMiddleware, getCurrentUser)
+router.patch('/me', authMiddleware, updateCurrentUser)
+router.patch('/me/password', authMiddleware, changePassword)
 
 router.get('/admin/users', authMiddleware, authorize('admin'), getAllUsers)
 

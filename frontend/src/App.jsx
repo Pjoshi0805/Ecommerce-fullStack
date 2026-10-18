@@ -27,6 +27,7 @@ import AdminCategories from "./components/admin/categories/AdminCategories";
 import AdminInventory from "./components/admin/inventory/AdminInventory";
 import AdminUsers from "./components/admin/users/AdminUsers"
 import AdminAnalytics from "./components/admin/analytics/AdminAnalytics"
+import AdminSettings from "./components/admin/settings/AdminSettings"
 function App() {
   return (
     <Routes>
@@ -70,6 +71,7 @@ function App() {
               <Route path="admin/inventory" element={<AdminInventory />} />
               <Route path="admin/users" element={<AdminUsers />} />
               <Route path="admin/analytics" element={<AdminAnalytics />} />
+              <Route path="admin/settings" element={<AdminSettings />} />
             </Route>
           </Route>
 

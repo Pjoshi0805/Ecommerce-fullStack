@@ -64,3 +64,76 @@ export async function getAllUsers(req, res) {
 
     return res.status(200).json(users);
 }
+
+
+
+export async function updateCurrentUser(req, res) {
+    const { id } = req.user
+    const { name } = req.body
+
+    if (!name || !name.trim()) {
+        return res.status(400).json({
+            error: "Name is required"
+        })
+    }
+
+    const user = await User.findByIdAndUpdate(
+        id,
+        { name: name.trim() },
+        {
+            new: true,
+            runValidators: true
+        }
+    ).select("-password")
+
+    if (!user) {
+        return res.status(404).json({
+            error: "User not found"
+        })
+    }
+
+    return res.status(200).json(user)
+}
+
+export async function changePassword(req, res) {
+    const { id } = req.user
+    const { currentPassword, newPassword } = req.body
+
+    if (!currentPassword || !newPassword) {
+        return res.status(400).json({
+            error: "Current password and new password are required"
+        })
+    }
+
+    if (newPassword.length < 8) {
+        return res.status(400).json({
+            error: "New password must be at least 8 characters long"
+        })
+    }
+
+    const user = await User.findById(id)
+
+    if (!user) {
+        return res.status(404).json({
+            error: "User not found"
+        })
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(
+        currentPassword,
+        user.password
+    )
+
+    if (!isPasswordCorrect) {
+        return res.status(400).json({
+            error: "Current password is incorrect"
+        })
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10)
+    await user.save()
+
+    return res.status(200).json({
+        message: "Password updated successfully"
+    })
+}
